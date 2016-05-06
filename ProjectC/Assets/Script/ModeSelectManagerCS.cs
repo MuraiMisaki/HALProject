@@ -12,6 +12,7 @@ public class ModeSelectManagerCS : MonoBehaviour {
     // Use this for initialization
     void Start () {
         // 初期化
+        this.transform.position = this.selectPointPos[nowSelectMode].position;
         moveTarget = null;
         isMove = false;
     }
