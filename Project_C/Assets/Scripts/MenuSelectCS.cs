@@ -2,101 +2,137 @@
 using System.Collections;
 
 public class MenuSelectCS : MonoBehaviour {
-
-    public GameObject[] SelectObj = new GameObject[4];  // 選択メニューオブジェクト
-    private bool isInit = false;    // 初期化したか
-    private bool isMove = false;    // 移動中か
-    public float moveSpeed;     // 移動スピード
-    public float movedist;     // 移動距離
-    private int moveDir = 0;    // 移動方向
-    private float distance;     // 移動間隔
-    public int selectMenu = 0; // 選択メニュー番号
+    public GameObject[] selectPointObj = new GameObject[1];   // 移動候補場所
+    private Transform moveTarget;                           // 移動場所
+    static private int nowSelectMode;                              // 現在選択モード
+    private float moveSpeed = 0.5f;                         // 移動速度
+    private bool isMove;                                    // 移動中フラグ
+    public GameObject sceneManager = null;
 
     // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        // 初期化してなければ
-        if (!isInit) {
-            // 初期化する
-            Init();
-        }
+    void Start()
+    {
+        // 初期化
+        this.transform.position = this.selectPointObj[nowSelectMode].transform.position;
+        moveTarget = null;
+        isMove = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // モード選択
+        ModeSelect();
+
+        // 移動
         if (isMove)
-        {
-            // 移動
-            Move();
-        }
-        else
-        {
+            move();
 
-            // 左が選択されたら
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                // 背景が右に動く
-                MoveRight();
-            }
-            // 右が選択されたら
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                // 背景が左に動く
-                MoveLeft();
-            }
-        }
-
-	}
-    void Init() {
-        // オブジェクト間の距離を求める
-        distance = SelectObj[1].transform.position.x - SelectObj[0].transform.position.x;
-        for (int i = 0; i < SelectObj.Length; i++) {
-            // オブジェクトの初期化
-            SelectObj[i].GetComponent<JumpMenuCS>().Init(distance, SelectObj.Length);
+        // 決定
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // 移動中はダメ
+            if (isMove)
+                return;
+            if (sceneManager == null)
+                return;
+            sceneManager.GetComponent<SceneManagerCS>().MoveNextScene(nowSelectMode);
         }
     }
-    // スクロール移動
-    void Move() {
-        // 移動
-        this.transform.position = new Vector3(this.transform.position.x + moveDir * moveSpeed, this.transform.position.y, this.transform.position.z);
-        // 距離を求める
-        float fDist = this.transform.position.x - this.SelectObj[selectMenu].transform.position.x;
-        // 一定距離よりも小さくなったら
-        if (fDist <= this.moveSpeed) {
-            // 到着
-            Arrival();
+
+    /// <summary>
+    /// 目的位置まで移動
+    /// </summary>
+    void move()
+    {
+
+        // 移動目的位置がなければ取得する
+        if (this.moveTarget == null)
+            this.moveTarget = this.selectPointObj[nowSelectMode].transform;   // 移動目的位置取得
+
+        Vector3 offset = moveTarget.position - this.transform.position;      // 現在位置との距離  
+        float distance = offset.magnitude;                      // 移動幅
+        Vector3 moveDir = offset.normalized;                    // 移動方向  
+
+        // 移動幅が一定距離より小さくなったら
+        if (distance <= this.moveSpeed)
+        {
+            // 移動完了
+            this.transform.position = moveTarget.position;
+            isMove = false;
             return;
         }
-    }
-    // 左へスクロール移動
-    void MoveLeft() {
-        // 選択更新
-        selectMenu--;
-        Debug.Log("moveleft");
-        // 下限制限
-        if (selectMenu < 0)
-        {
-            selectMenu += this.SelectObj.Length;
-        }
-        moveDir = -1;
-        isMove = true;
-    }
-    // 右へスクロール移動
-    void MoveRight() {
-        selectMenu++;
-        Debug.Log("moveright");
-        // 上限制限
-        if (selectMenu >= this.SelectObj.Length) {
-            selectMenu = 0;
-        }
-        moveDir = 1;
-        isMove = true;
+
+        // 移動
+        this.transform.position += moveDir * this.moveSpeed;
     }
 
-    // 到着
-    void Arrival() {
-        this.transform.position = SelectObj[selectMenu].transform.position;
-        isMove = false;
-        moveDir = 0;
+    /// <summary>
+    /// 次のモード選択
+    /// </summary>
+    void NextModeSelect()
+    {
+        // 選択モード変更
+        nowSelectMode++;
+
+        // 上限制限
+        if (nowSelectMode >= this.selectPointObj.Length)
+        {
+            nowSelectMode -= this.selectPointObj.Length;
+        }
+
+        //// 選択位置更新
+        //int n = (nowSelectMode - 2 + this.selectPointObj.Length) % this.selectPointObj.Length;
+        //selectPointObj[n].GetComponent<JumpMenuCS>().JumpRight();
+        // 移動ターゲット変更
+        this.moveTarget = this.selectPointObj[nowSelectMode].transform;
+    }
+
+    /// <summary>
+    /// 前のモード選択
+    /// </summary>
+    void PrevModeSelect()
+    {
+        // 選択モード変更
+        nowSelectMode--;
+
+        // 下限制限
+        if (nowSelectMode < 0)
+        {
+            nowSelectMode += this.selectPointObj.Length;
+        }
+
+        //// 選択位置更新
+        //int n = (nowSelectMode + 3) % this.selectPointObj.Length;
+        //selectPointObj[n].GetComponent<JumpMenuCS>().JumpLeft();
+        // 移動ターゲット設定
+        this.moveTarget = this.selectPointObj[nowSelectMode].transform;
+    }
+
+    /// <summary>
+    /// モード選択
+    /// </summary>
+    void ModeSelect()
+    {
+        // 移動中は選択できない
+        if (isMove)
+            return;
+
+        // 左矢印キーが押されたら
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            // 前モード選択
+            PrevModeSelect();
+            // 移動フラグ立ち上げ
+            isMove = true;
+        }
+        // 右矢印キーが押されたら
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            // 次モード選択
+            NextModeSelect();
+            // 移動フラグ立ち上げ
+            isMove = true;
+        }
     }
 }
