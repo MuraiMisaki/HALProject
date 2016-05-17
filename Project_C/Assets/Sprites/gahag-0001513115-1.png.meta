@@ -1,0 +1,329 @@
+fileFormatVersion: 2
+guid: 07912a3c46e414a4c8839f7e936c9c3e
+timeCreated: 1463382984
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: gahag-0001513115-1_0
+    21300002: gahag-0001513115-1_1
+    21300004: gahag-0001513115-1_2
+    21300006: gahag-0001513115-1_3
+    21300008: gahag-0001513115-1_4
+    21300010: gahag-0001513115-1_5
+    21300012: gahag-0001513115-1_6
+    21300014: gahag-0001513115-1_7
+    21300016: gahag-0001513115-1_8
+    21300018: gahag-0001513115-1_9
+    21300020: gahag-0001513115-1_10
+    21300022: gahag-0001513115-1_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: gahag-0001513115-1_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 481
+        width: 153
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57.5, y: -16.5}
+        - {x: 65.5, y: -6.5}
+        - {x: 76.5, y: 18.5}
+        - {x: 76.5, y: 78.5}
+        - {x: 72.5, y: 87.5}
+        - {x: -69.5, y: 87.5}
+        - {x: -76.5, y: 75.5}
+        - {x: -76.5, y: 41.5}
+        - {x: -57.5, y: -47.5}
+        - {x: -42.5, y: -87.5}
+        - {x: 52.5, y: -87.5}
+        - {x: 72.5, y: -85.5}
+        - {x: 76.5, y: -76.5}
+        - {x: 76.5, y: -55.5}
+        - {x: 60.5, y: -18.5}
+    - name: gahag-0001513115-1_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 481
+        width: 161
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53.5, y: -89.5}
+        - {x: 80.5, y: -78.5}
+        - {x: 80.5, y: 77.5}
+        - {x: 33.5, y: 91.5}
+        - {x: 29.5, y: 92.5}
+        - {x: -35.5, y: 92.5}
+        - {x: -80.5, y: 78.5}
+        - {x: -80.5, y: 36.5}
+        - {x: -61.5, y: -49.5}
+        - {x: -39.5, y: -92.5}
+        - {x: 46.5, y: -92.5}
+        - {x: 50.5, y: -91.5}
+        - {x: 39.5, y: -75.5}
+        - {x: 37.5, y: -69.5}
+        - {x: 43.5, y: -79.5}
+    - name: gahag-0001513115-1_2
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 481
+        width: 136
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -68, y: 85}
+        - {x: -68, y: -85}
+        - {x: 68, y: -85}
+        - {x: 68, y: 85}
+    - name: gahag-0001513115-1_3
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 481
+        width: 178
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 63, y: 109}
+        - {x: 44, y: 94}
+        - {x: -34, y: 109}
+        - {x: -89, y: 109}
+        - {x: -89, y: -49}
+        - {x: -49, y: -109}
+        - {x: 56, y: -109}
+        - {x: 89, y: 36}
+        - {x: 89, y: 109}
+    - name: gahag-0001513115-1_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 228
+        width: 184
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85, y: 114.5}
+        - {x: 31, y: 114.5}
+        - {x: 29, y: 99.5}
+        - {x: -24, y: 113.5}
+        - {x: -28, y: 114.5}
+        - {x: -66, y: 114.5}
+        - {x: -84, y: 77.5}
+        - {x: -84, y: 41.5}
+        - {x: -92, y: 21.5}
+        - {x: -92, y: -35.5}
+        - {x: -79, y: -36.5}
+        - {x: -64, y: -36.5}
+        - {x: -59, y: -64.5}
+        - {x: -49, y: -74.5}
+        - {x: -44, y: -77.5}
+        - {x: -41, y: -107.5}
+        - {x: -36, y: -114.5}
+        - {x: 63, y: -114.5}
+        - {x: 77, y: -105.5}
+        - {x: 92, y: -79.5}
+        - {x: 92, y: 85.5}
+    - name: gahag-0001513115-1_5
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 228
+        width: 123
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.5, y: 73.5}
+        - {x: -61.5, y: 56.5}
+        - {x: -61.5, y: -45.5}
+        - {x: -54.5, y: -70.5}
+        - {x: -40.5, y: -73.5}
+        - {x: 61.5, y: -73.5}
+        - {x: 61.5, y: 63.5}
+        - {x: 28.5, y: 73.5}
+    - name: gahag-0001513115-1_6
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 228
+        width: 161
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -80.5, y: 102.5}
+        - {x: -80.5, y: 4.5}
+        - {x: -50.5, y: -101.5}
+        - {x: -47.5, y: -102.5}
+        - {x: 80.5, y: -102.5}
+        - {x: 80.5, y: 82.5}
+        - {x: 61.5, y: 102.5}
+    - name: gahag-0001513115-1_7
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 228
+        width: 175
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38.5, y: 94}
+        - {x: -29.5, y: 94}
+        - {x: -43.5, y: 93}
+        - {x: -83.5, y: 59}
+        - {x: -87.5, y: 46}
+        - {x: -87.5, y: -35}
+        - {x: -55.5, y: -94}
+        - {x: 54.5, y: -94}
+        - {x: 87.5, y: -10}
+        - {x: 87.5, y: 45}
+        - {x: 76.5, y: 63}
+    - name: gahag-0001513115-1_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 170
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39, y: -19}
+        - {x: 38, y: -18}
+        - {x: 49, y: -13}
+        - {x: 85, y: 19}
+        - {x: 85, y: 69}
+        - {x: 76, y: 80}
+        - {x: -80, y: 80}
+        - {x: -85, y: 75}
+        - {x: -85, y: -66}
+        - {x: -57, y: -80}
+        - {x: 51, y: -80}
+        - {x: 76, y: -39}
+        - {x: 48, y: -16}
+        - {x: 42, y: -17}
+    - name: gahag-0001513115-1_9
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1
+        width: 123
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: 89.5}
+        - {x: -42.5, y: 89.5}
+        - {x: -61.5, y: 78.5}
+        - {x: -61.5, y: -89.5}
+        - {x: 42.5, y: -89.5}
+        - {x: 61.5, y: -35.5}
+        - {x: 61.5, y: 54.5}
+        - {x: 56.5, y: 81.5}
+    - name: gahag-0001513115-1_10
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1
+        width: 151
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75.5, y: 56}
+        - {x: 44.5, y: 79}
+        - {x: -65.5, y: 79}
+        - {x: -75.5, y: 45}
+        - {x: -75.5, y: -22}
+        - {x: -39.5, y: -79}
+        - {x: 35.5, y: -79}
+        - {x: 38.5, y: -78}
+        - {x: 62.5, y: -54}
+        - {x: 75.5, y: -22}
+    - name: gahag-0001513115-1_11
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1
+        width: 121
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60.5, y: 80.5}
+        - {x: -60.5, y: -59.5}
+        - {x: -41.5, y: -80.5}
+        - {x: 46.5, y: -80.5}
+        - {x: 60.5, y: -66.5}
+        - {x: 60.5, y: 80.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
