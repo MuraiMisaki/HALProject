@@ -4,19 +4,44 @@ using System.Collections;
 
 public class Move : MonoBehaviour {
 
-    private int i;
     private GameObject No;
 
 	// Use this for initialization
 	void Start () {
-        i = 0;
         No = GameObject.Find("No");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKey(KeyCode.RightArrow)) {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            foreach (Transform child in transform)
+            {
+                //child is your child transform
+                child.transform.localPosition += new Vector3(-140, 0, 0);
+
+                if (child.transform.localPosition.x < -840)
+                {
+                    child.transform.localPosition += new Vector3(1680, 0, 0);
+                }
+            }
+        }
+        
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            foreach (Transform child in transform)
+            {
+                //child is your child transform
+                child.transform.localPosition += new Vector3(140, 0, 0);
+
+                if (child.transform.localPosition.x > 840)
+                {
+                    child.transform.localPosition += new Vector3(-1680, 0, 0);
+                }
+
+            }
         }
 	}
 }
