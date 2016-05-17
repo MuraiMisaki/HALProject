@@ -28,7 +28,7 @@ public class SceneManagerCS : MonoBehaviour {
         }
     }
 
-    void MoveNextScene(int i)
+    public void MoveNextScene(int i)
     {
         if (i < 0 || i >= nextScene.Length)
         {
@@ -41,7 +41,7 @@ public class SceneManagerCS : MonoBehaviour {
 
         SceneManager.LoadScene(nextScene[i]);
     }
-    void MovePrevScene()
+    public void MovePrevScene()
     {
         // 文字列が入っていなければ
         if (prevScene.Length == 0)
