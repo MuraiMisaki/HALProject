@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: 29e9da22536de6140b75d1398f644b0a
+timeCreated: 1463382488
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: eto1_0
+    21300002: eto1_1
+    21300004: eto1_2
+    21300006: eto1_3
+    21300008: eto1_4
+    21300010: eto1_5
+    21300012: eto1_6
+    21300014: eto1_7
+    21300016: eto1_8
+    21300018: eto1_9
+    21300020: eto1_10
+    21300022: eto1_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: eto1_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 179
+        width: 96
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 38.5}
+        - {x: -48, y: 35.5}
+        - {x: -48, y: -4.5}
+        - {x: -44, y: -29.5}
+        - {x: -40, y: -38.5}
+        - {x: 48, y: -38.5}
+        - {x: 48, y: 34.5}
+        - {x: 46, y: 38.5}
+    - name: eto1_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 175
+        width: 101
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 43}
+        - {x: -50.5, y: 36}
+        - {x: -50.5, y: 8}
+        - {x: -44.5, y: -17}
+        - {x: -15.5, y: -43}
+        - {x: 22.5, y: -43}
+        - {x: 50.5, y: -14}
+        - {x: 50.5, y: 38}
+        - {x: 34.5, y: 43}
+    - name: eto1_2
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 182
+        width: 86
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 35.5}
+        - {x: -43, y: -33.5}
+        - {x: -39, y: -35.5}
+        - {x: 40, y: -35.5}
+        - {x: 43, y: -29.5}
+        - {x: 43, y: 35.5}
+    - name: eto1_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 177
+        width: 113
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56.5, y: 50.5}
+        - {x: -56.5, y: 5.5}
+        - {x: -47.5, y: -35.5}
+        - {x: -29.5, y: -50.5}
+        - {x: 33.5, y: -50.5}
+        - {x: 56.5, y: -44.5}
+        - {x: 56.5, y: 50.5}
+    - name: eto1_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 76
+        width: 102
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49, y: -22}
+        - {x: 48, y: 8}
+        - {x: 47, y: 17}
+        - {x: 43, y: 48}
+        - {x: -51, y: 48}
+        - {x: -51, y: -32}
+        - {x: -27, y: -48}
+        - {x: 36, y: -48}
+        - {x: 51, y: -45}
+        - {x: 51, y: -22}
+    - name: eto1_5
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 87
+        width: 76
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 35}
+        - {x: -38, y: 31}
+        - {x: -38, y: -23}
+        - {x: -31, y: -35}
+        - {x: 18, y: -35}
+        - {x: 38, y: -28}
+        - {x: 38, y: 27}
+        - {x: 33, y: 35}
+    - name: eto1_6
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 80
+        width: 102
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 46.5}
+        - {x: -51, y: 32.5}
+        - {x: -51, y: 4.5}
+        - {x: -35, y: -34.5}
+        - {x: -21, y: -46.5}
+        - {x: 22, y: -46.5}
+        - {x: 34, y: -43.5}
+        - {x: 51, y: 4.5}
+        - {x: 51, y: 40.5}
+        - {x: 29, y: 46.5}
+    - name: eto1_7
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 84
+        width: 110
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 41}
+        - {x: -55, y: 14}
+        - {x: -55, y: -34}
+        - {x: -52, y: -41}
+        - {x: 47, y: -41}
+        - {x: 55, y: -28}
+        - {x: 55, y: 30}
+        - {x: 30, y: 41}
+    - name: eto1_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 107
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51.5, y: 31.5}
+        - {x: -53.5, y: 25.5}
+        - {x: -53.5, y: -13.5}
+        - {x: -44.5, y: -31.5}
+        - {x: 37.5, y: -31.5}
+        - {x: 53.5, y: -23.5}
+        - {x: 53.5, y: 25.5}
+        - {x: 42.5, y: 31.5}
+    - name: eto1_9
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 3
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: -31}
+        - {x: -34.5, y: -38}
+        - {x: 38.5, y: -38}
+        - {x: 38.5, y: 15}
+        - {x: 34.5, y: 36}
+        - {x: 23.5, y: 38}
+        - {x: -22.5, y: 38}
+        - {x: -38.5, y: 20}
+    - name: eto1_10
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 3
+        width: 96
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48, y: -30.5}
+        - {x: -45, y: -31.5}
+        - {x: 36, y: -31.5}
+        - {x: 48, y: -29.5}
+        - {x: 48, y: 15.5}
+        - {x: 41, y: 31.5}
+        - {x: -40, y: 31.5}
+        - {x: -48, y: 13.5}
+    - name: eto1_11
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 2
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 32}
+        - {x: -38.5, y: -28}
+        - {x: -37.5, y: -32}
+        - {x: 37.5, y: -32}
+        - {x: 38.5, y: -28}
+        - {x: 38.5, y: 32}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
