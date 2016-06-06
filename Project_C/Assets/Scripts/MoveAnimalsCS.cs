@@ -24,8 +24,14 @@ public class MoveAnimalsCS : MonoBehaviour {
         }
     }
 
+    // 衝突
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<BlinkerCS>().StartBink();
+        }
+
         anim.SetBool("isDead", true);
         isDead = true;
         // 0.5秒後に削除

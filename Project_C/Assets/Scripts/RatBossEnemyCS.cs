@@ -74,7 +74,7 @@ public class RatBossEnemyCS : MonoBehaviour
             ChangeState(RatBossEnemyState.Move);    // 移動する
             waitTime = 0.0f;
         }
-        if (recastTime > 2.0f)
+        if (recastTime > 7.0f)
         {
             ChangeState(RatBossEnemyState.Summon);  // 召喚
             recastTime = 0.0f;
@@ -128,6 +128,9 @@ public class RatBossEnemyCS : MonoBehaviour
             life--;
             if (life < 0)
             {
+                ChangeState(RatBossEnemyState.Dead);
+                GetComponent<BlinkerCS>().StartBink();
+                GetComponent<Collider2D>().enabled = false;
                 anim.SetTrigger("Dead");
             }
         }
