@@ -16,12 +16,12 @@ public class ShopSelectCS : MonoBehaviour {
 
     //グローバル変数
     int SelectParts = 0;    //0…頭パーツを設定1…服パーツを設定2…足パーツを設定
-    int HatPartsEdit = 0;   //頭装備を変更する変数
+    //int HatPartsEdit = 0;   //頭装備を変更する変数
 
     int HatEquip = 0;           //頭装備
     int SuitEquip = 0;          //体装備
     int BootsEquips = 0;        //足装備
-    bool Initialize = false;
+    //bool Initialize = false;
 
     GameObject UFlame;
     GameObject MFlame;
