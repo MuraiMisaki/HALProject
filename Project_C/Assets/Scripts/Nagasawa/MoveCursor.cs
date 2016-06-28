@@ -3,12 +3,14 @@ using System.Collections;
 
 public class MoveCursor : MonoBehaviour {
 
-    private GameObject No;
+    private GameObject CharacterData;      // 干支＋猫の13体をまとめている親データ
     GameObject Manager;
+    GameObject ChangeText;
     
 	// Use this for initialization
 	void Start () {
         Manager = GameObject.Find("Manager");
+        ChangeText = GameObject.Find("Text");
 	}
 	
 	// Update is called once per frame
@@ -34,7 +36,7 @@ public class MoveCursor : MonoBehaviour {
             }
 
             if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-                if (this.transform.localPosition.x < 210)
+                if (this.transform.localPosition.x < 220)
                 {
                     if (this.transform.localPosition.x > -210)
                         this.transform.localPosition += new Vector3(-140, 0, 0);
@@ -49,7 +51,7 @@ public class MoveCursor : MonoBehaviour {
             {
                 TexManager Ma = Manager.GetComponent<TexManager>();
                 if (this.transform.localPosition.x < 250)
-                    Ma.Setdef(No);
+                    Ma.Setdef(CharacterData);
             }
  
         
@@ -63,7 +65,7 @@ public class MoveCursor : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                     TexManager Ma = Manager.GetComponent<TexManager>();
-                    Ma.GetTex(No);
+                    Ma.GetTex(CharacterData);
             }
         }
 
@@ -71,6 +73,8 @@ public class MoveCursor : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        No = collision.gameObject;
+        CharacterData = collision.gameObject;
+
+        if (this.transform.localPosition.y < 0) ChangeText.GetComponent<ChangeText>().GetCharacterData(CharacterData);
     }
 }
