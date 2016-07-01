@@ -19,8 +19,7 @@ public class EnemyFatRatCS : MonoBehaviour
     public MovePattern movePat;
     private GameObject player;
     private float lineY;
-    private int moveCnt;
-    private bool isReturn;  
+    private int moveCnt;    
     
     // Use this for initialization
     void Start()
@@ -30,7 +29,6 @@ public class EnemyFatRatCS : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         lineY = transform.position.y + 1.25f /2;
         moveCnt = 0;
-        isReturn = false;
     }
 
     // Update is called once per frame
@@ -38,10 +36,6 @@ public class EnemyFatRatCS : MonoBehaviour
     {
         if (isDead)
             return;
-        if (isReturn) {
-            MoveReturn();
-            return;
-        }
 
         if (isKnockback) {
             transform.position = new Vector3(transform.position.x + 0.05f, transform.position.y, transform.position.z);
@@ -80,16 +74,7 @@ public class EnemyFatRatCS : MonoBehaviour
                     
         }
     }
-    void MoveReturn()
-    {
-        transform.position = new Vector3(transform.position.x + 5.0f * Time.deltaTime, transform.position.y, transform.position.z);
-        
-    }
-    public void StartReturn()
-    {
-        isReturn = true;
-        anim.speed = 3.0f;
-    }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {

@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100bfd7a68aaece4e905eeb209553dde, type: 3}
+  m_Name: StageDatabase
+  m_EditorClassIdentifier: 
+  stageData:
+  - bossName: "\u30CD\u30BA\u30DF"
+    BGObj:
+    - {fileID: 159610, guid: b73981509f681a3428d0fa8bd19bfc3d, type: 2}
+    - {fileID: 147844, guid: 8861d82041d44ce449ded844740d01f5, type: 2}
+    - {fileID: 114902, guid: 8920e0451faf9234ebd6258c14b8aa0d, type: 2}
+    bossObj: {fileID: 158294, guid: 5937c9b1c19033a47affcaa638819cf5, type: 2}
+    isClear: 0
+  - bossName: "\u30A6\u30B7"
+    BGObj:
+    - {fileID: 132808, guid: ae742a25c0cf03f46b4a43e804eb871d, type: 2}
+    - {fileID: 182708, guid: c1a463444a108ef46953b1c2cd13ec55, type: 2}
+    - {fileID: 172746, guid: c078855abe8f6994d94a15d81c92f089, type: 2}
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30C8\u30E9"
+    BGObj:
+    - {fileID: 127946, guid: a5b21feffb665354fa377a30dba5bc16, type: 2}
+    - {fileID: 123780, guid: e74f18791da228b4cab5ecc78451382a, type: 2}
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30A6\u30B5\u30AE"
+    BGObj: []
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30BF\u30C4"
+    BGObj: []
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30D8\u30D3"
+    BGObj: []
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30A6\u30DE"
+    BGObj: []
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30D2\u30C4\u30B8"
+    BGObj: []
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30B5\u30EB"
+    BGObj: []
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30C8\u30EA"
+    BGObj: []
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30A4\u30CC"
+    BGObj: []
+    bossObj: {fileID: 0}
+    isClear: 0
+  - bossName: "\u30A4\u30CE\u30B7\u30B7"
+    BGObj:
+    - {fileID: 115788, guid: d683876d0ed0aa1408896d181427d5ed, type: 2}
+    - {fileID: 166844, guid: 921ed778594068d49ac112686c100938, type: 2}
+    bossObj: {fileID: 0}
+    isClear: 0
+  enemyPopDatabase: {fileID: 11400000, guid: 146bc6a411d171846897432aed4ed852, type: 2}
