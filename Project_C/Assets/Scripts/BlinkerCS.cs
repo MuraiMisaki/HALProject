@@ -16,6 +16,9 @@ public class BlinkerCS : MonoBehaviour {
         BlinkCnt = 0;
         isBlink = false;
     }
+    public float GetBlinkTime() {
+        return BlinkNum * 2 * intervalTime;
+    }
 	
 	// Update is called once per frame
 	void Update () {

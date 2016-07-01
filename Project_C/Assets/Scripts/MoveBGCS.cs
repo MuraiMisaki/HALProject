@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class MoveBGCS : MonoBehaviour {
 
     public GameObject[] BG = new GameObject[3];
-    public Slider slider;
-    public float totalDistance;
     private float distance; 
     public float interval;
     public float speed;
@@ -25,7 +22,10 @@ public class MoveBGCS : MonoBehaviour {
             moveX += interval;
         }
         transform.position = new Vector3(moveX, transform.position.y, transform.position.z);
-        slider.value = distance / totalDistance;
 
+    }
+
+    public float GetMoveDistance() {
+        return distance;
     }
 }
