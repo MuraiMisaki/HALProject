@@ -34,9 +34,6 @@ public class ShopSelectCS : MonoBehaviour {
     int BootsEquips = 0;        //足装備
     //bool Initialize = false;
     int ShopPoint = 1234;
-    int HatEquip = 0;           //頭装備
-    int SuitEquip = 0;          //体装備
-    int BootsEquips = 0;        //足装備
 
     int HatMount = 0;               //現在装備している頭装備
     int SuitMount = 0;              //現在(ry
