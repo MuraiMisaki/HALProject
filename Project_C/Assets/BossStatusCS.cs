@@ -21,7 +21,7 @@ public class BossStatusCS : MonoBehaviour {
     {
         if (collision.gameObject.tag != "Enemy")
         {
-            if (GetComponent<RatBossEnemyCS>().GetState() == RatBossEnemyState.Appearance)
+            if (GetComponent<RatBossEnemyCS>().GetState() == BossEnemyState.Appearance)
                 return;
 
             hp--;
@@ -29,7 +29,7 @@ public class BossStatusCS : MonoBehaviour {
 
             if (hp <= 0)
             {
-                GetComponent<RatBossEnemyCS>().ChangeState(RatBossEnemyState.Dead);
+                GetComponent<RatBossEnemyCS>().ChangeState(BossEnemyState.Dead);
                 GetComponent<BlinkerCS>().StartBink();
                 GetComponent<Collider2D>().enabled = false;
             }
