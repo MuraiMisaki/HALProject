@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+public enum RatBossEnemyState
+{
+    Appearance,     // 登場
+    Idle,
+    Move,
+    Summon,
+    Dead
+}
 public class RatBossEnemyCS : MonoBehaviour
 {
-
-    private BossEnemyState state;
-    public Transform[] popEnemyPos = new Transform[3];
+    private RatBossEnemyState state;
+    public Vector3[] popEnemyPos = new Vector3[3];
     public int posNum;
     private Vector3 toMove;
     private bool isMove;
@@ -18,14 +24,18 @@ public class RatBossEnemyCS : MonoBehaviour
 
     public GameObject[] summonEnemy = new GameObject[3];
 
+    private Vector3 pos;
     // Use this for initialization
     void Start()
     {
-        state = BossEnemyState.Idle;
+        state = RatBossEnemyState.Appearance;
         isMove = false;
         posNum = 1;
         waitTime = 0.0f;
         life = 3;
+        pos = transform.position;
+        pos.x = 11.5f;
+        transform.position = pos;
 
         anim = animChild.GetComponent<Animator>();
     }
@@ -35,29 +45,46 @@ public class RatBossEnemyCS : MonoBehaviour
     {
         switch (state)
         {
-            case BossEnemyState.Idle:
+            case RatBossEnemyState.Appearance:
+                Appearance();
+                break;
+            case RatBossEnemyState.Idle:
                 Idle();
                 break;
-            case BossEnemyState.Move:
+            case RatBossEnemyState.Move:
                 Move();
                 break;
-            case BossEnemyState.Summon:
+            case RatBossEnemyState.Summon:
                 Summon();
                 break;
-            case BossEnemyState.Dead:
+            case RatBossEnemyState.Dead:
                 Dead();
                 break;
 
         }
 
     }
-    public void ChangeState(BossEnemyState state)
+    public void ChangeState(RatBossEnemyState state)
     {
         this.state = state;
     }
-    public BossEnemyState GetState()
+    public RatBossEnemyState GetState()
     {
-        return state;
+        return this.state;
+    }
+
+    void Appearance()
+    {
+        waitTime += Time.deltaTime;
+        if (waitTime < 1.5f)
+            return;
+        pos.x -= 0.1f;
+        if (pos.x < 6.5f)
+        {
+            pos.x = 6.5f;
+            ChangeState(RatBossEnemyState.Idle);
+        }
+        transform.position = pos;
     }
 
     void Idle()
@@ -67,12 +94,12 @@ public class RatBossEnemyCS : MonoBehaviour
         // 10秒経ったら
         if (waitTime > 10.0f)
         {
-            ChangeState(BossEnemyState.Move);    // 移動する
+            ChangeState(RatBossEnemyState.Move);    // 移動する
             waitTime = 0.0f;
         }
         if (recastTime > 7.0f)
         {
-            ChangeState(BossEnemyState.Summon);  // 召喚
+            ChangeState(RatBossEnemyState.Summon);  // 召喚
             recastTime = 0.0f;
         }
 
@@ -85,7 +112,7 @@ public class RatBossEnemyCS : MonoBehaviour
                 posNum++;
             else
                 posNum--;
-            toMove = new Vector3(transform.position.x, popEnemyPos[posNum].position.y, popEnemyPos[posNum].position.z - 5.0f);
+            toMove = new Vector3(transform.position.x, popEnemyPos[posNum].y, popEnemyPos[posNum].z - 5.0f);
             isMove = true;
             return;
         }
@@ -100,7 +127,7 @@ public class RatBossEnemyCS : MonoBehaviour
             // 移動完了
             this.transform.position = toMove;
             isMove = false;
-            ChangeState(BossEnemyState.Idle);              // 待機状態へ
+            ChangeState(RatBossEnemyState.Idle);              // 待機状態へ
             return;
         }
 
@@ -110,25 +137,12 @@ public class RatBossEnemyCS : MonoBehaviour
     void Summon()
     {
         int rndm = Random.Range(0, summonEnemy.Length);
-        Instantiate(summonEnemy[rndm], new Vector3(transform.position.x, popEnemyPos[posNum].position.y, popEnemyPos[posNum].position.z), transform.rotation);
-        ChangeState(BossEnemyState.Idle);
+        Instantiate(summonEnemy[rndm], new Vector3(transform.position.x, popEnemyPos[posNum].y, popEnemyPos[posNum].z), transform.rotation);
+        ChangeState(RatBossEnemyState.Idle);
     }
     void Dead()
     {
+        anim.SetTrigger("Dead");
+    }
 
-    }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag != "Enemy")
-        {
-            life--;
-            if (life < 0)
-            {
-                ChangeState(BossEnemyState.Dead);
-                GetComponent<BlinkerCS>().StartBink();
-                GetComponent<Collider2D>().enabled = false;
-                anim.SetTrigger("Dead");
-            }
-        }
-    }
 }
