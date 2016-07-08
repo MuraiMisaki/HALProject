@@ -8,6 +8,8 @@ public class Move : MonoBehaviour {
 
     private int cnt;
 
+    private MenuCharactorMove MenuCharactor;
+
     // Use this for initialization
     void Start()
     {
@@ -15,6 +17,7 @@ public class Move : MonoBehaviour {
         isMove = false;
         cnt = 1;
         moveSpeed = 0;
+        MenuCharactor = GameObject.Find("Charactor").GetComponent<MenuCharactorMove>();
     }
 
     // Update is called once per frame
@@ -36,9 +39,9 @@ public class Move : MonoBehaviour {
                 moveSpeed = -0.5f;
             }
             // 決定
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Submit"))
             {
-
+                MenuCharactor.SetFlg();
             }
         }
         else {

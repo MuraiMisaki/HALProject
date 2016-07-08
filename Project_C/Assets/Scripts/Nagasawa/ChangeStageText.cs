@@ -22,7 +22,7 @@ public class ChangeStageText : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        Stage = GameObject.Find("1");
     }
 
     // Update is called once per frame

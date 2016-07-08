@@ -7,12 +7,13 @@ public class PlayerStatusCS : MonoBehaviour {
     public GameObject[] hpUI = new GameObject[5];       // HP表示用UI
     private int lifeStage;                              // 一つのライフにつき何段階
     public int hp;                                      // HPデータ
+    private int maxHP;
     private float invincibleTime;                       // 無敵時間
 
     // Use this for initialization
     void Start () {
         lifeStage = hpUI[0].GetComponent<UIStatusCS>().GetStatus();
-        hp = lifeStage * hpUI.Length;
+        maxHP = hp = lifeStage * hpUI.Length;
     }
 	
 	// Update is called once per frame
@@ -25,6 +26,19 @@ public class PlayerStatusCS : MonoBehaviour {
             invincibleTime -= Time.deltaTime;
         }
 	}
+    public void Recovery() {
+        hp++;
+        if (maxHP < hp)
+        {
+            hp = maxHP;
+        }
+        else
+        {
+            Debug.Log("hp:" + (hp+1) + " Stage:" + lifeStage + " UInum:" + (((hp + 1) / lifeStage) - 1));
+            hpUI[((hp+1) / lifeStage) - 1].GetComponent<UIStatusCS>().RecoveryUI();
+        }
+
+    }
 
     /// <summary>
     /// 当たり判定

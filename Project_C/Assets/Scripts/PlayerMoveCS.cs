@@ -6,13 +6,14 @@ public class PlayerMoveCS : MonoBehaviour {
     public Transform[] lane = new Transform[3];
     private Transform moveToLane = null;
     public float moveSpeed = 0.5f;
-    private int selectLane = 0;
+    private int selectLane = 1;
     private bool isMove = false;
 
 	// Use this for initialization
 	void Start () {
-	    
-	}
+        isMove = false;
+        transform.position = lane[selectLane].position;
+    }
 
     // Update is called once per frame
     void Update()
