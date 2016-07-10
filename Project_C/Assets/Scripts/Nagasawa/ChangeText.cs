@@ -8,11 +8,12 @@ public class ChangeText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        Charactar = GameObject.Find("0");
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         switch (Charactar.name) {
             case "0":

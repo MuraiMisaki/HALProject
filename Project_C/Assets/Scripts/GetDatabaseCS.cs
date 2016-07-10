@@ -4,11 +4,13 @@ using System.Collections;
 
 public class GetDatabaseCS : MonoBehaviour {
 
-    public StageDatabase stagedata;
+    private StageDatabase stagedata;
     public Text bossName;
     public Canvas canvas;
     // Use this for initialization
     void Start () {
+
+ //       stagedata = Resources.Load("StageDatabase");
         if (!stagedata.stageData[0].isClear)
         {
             bossName.text = stagedata.stageData[0].bossName;

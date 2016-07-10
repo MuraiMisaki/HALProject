@@ -4,7 +4,7 @@ using System.Collections;
 
 public class UIStatusCS : MonoBehaviour {
 
-    private int status;
+    public int status;
     public GameObject[] particle = new GameObject[2];
     public Image[] image = new Image[2];
 
@@ -44,6 +44,10 @@ public class UIStatusCS : MonoBehaviour {
         }
 
         image[status - 1].enabled = true;
+    }
+    public void RecoveryUI() {
+        image[status].enabled = true;
+        status++;
     }
 
     public int GetStatus() {

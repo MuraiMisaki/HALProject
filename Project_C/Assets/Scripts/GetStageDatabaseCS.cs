@@ -3,11 +3,13 @@ using System.Collections;
 
 public class GetStageDatabaseCS : MonoBehaviour {
 
-    public int stageNumber = 0;             // 後でシーン内で統一する。
+//    public int stageNumber = 0;             // 後でシーン内で統一する。
+    public GameProgressionData gameData;    // ゲーム進行用データ
     public StageDatabase stageDatabase;
     public GameObject backgroundParent;
 	// Use this for initialization
 	void Start () {
+        int stageNumber = gameData.selectStage;
         if (stageNumber >= stageDatabase.stageData.Length)
             return;
 

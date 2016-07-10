@@ -15,20 +15,25 @@ public class SceneManagerCS : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // Enterキーが押されたら
-        if (Input.GetKeyDown(KeyCode.Return))
+        // 決定キーが押されたら
+        if (Input.GetButtonDown("Submit"))
         {
             // 次のシーンへ移動
             MoveNextScene(selectScene);
         }
-
+        // キャンセルキーが押されたら
+        if (Input.GetButtonDown("Cancel"))
+        {
+            // 前のシーンへ移動
+            MovePrevScene();
+        }
         if (Input.GetKeyDown(KeyCode.Delete)) {
             // 前のシーンへ移動
             MovePrevScene();
         }
     }
 
-    public void MoveNextScene(int i)
+    public void MoveNextScene(int i = 0)
     {
         if (i < 0 || i >= nextScene.Length)
         {

@@ -13,11 +13,11 @@ public class MoveCloud : MonoBehaviour {
     void Update()
     {
         // 移動
-        foreach (Transform child in transform)
-        {
-            child.transform.position -= new Vector3(0.5f, 0, 0);
-            if (child.transform.position.x < -150.0f) { child.transform.position = new Vector3(750, 238, 0); }
-        }
+        this.transform.localPosition -= new Vector3(0.5f, 0, 0);
+       if (this.transform.localPosition.x < -586.0f) {
+           this.transform.localPosition = new Vector3(580, 125, 0); 
+       }
+     
     }
 
 }

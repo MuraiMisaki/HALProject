@@ -18,7 +18,7 @@ MonoBehaviour:
     - {fileID: 147844, guid: 8861d82041d44ce449ded844740d01f5, type: 2}
     - {fileID: 114902, guid: 8920e0451faf9234ebd6258c14b8aa0d, type: 2}
     bossObj: {fileID: 158294, guid: 5937c9b1c19033a47affcaa638819cf5, type: 2}
-    isClear: 0
+    isClear: 1
   - bossName: "\u30A6\u30B7"
     BGObj:
     - {fileID: 132808, guid: ae742a25c0cf03f46b4a43e804eb871d, type: 2}
@@ -37,11 +37,17 @@ MonoBehaviour:
     bossObj: {fileID: 0}
     isClear: 0
   - bossName: "\u30BF\u30C4"
-    BGObj: []
+    BGObj:
+    - {fileID: 119454, guid: aba94fbb479b34248ac3436e1597aa7a, type: 2}
+    - {fileID: 179140, guid: 781ceac4ea6d04d4bbfd1f6391b468e1, type: 2}
+    - {fileID: 150096, guid: 6c9970f0b90f6334383eb67e29e14e36, type: 2}
+    - {fileID: 175174, guid: fcb4e0b75c8cdb244aee77b272150869, type: 2}
     bossObj: {fileID: 0}
     isClear: 0
   - bossName: "\u30D8\u30D3"
-    BGObj: []
+    BGObj:
+    - {fileID: 195682, guid: 4e60a505c58b68b42a04792bb3da3792, type: 2}
+    - {fileID: 153486, guid: bbf20b3f9fb97b44c835897a206a735b, type: 2}
     bossObj: {fileID: 0}
     isClear: 0
   - bossName: "\u30A6\u30DE"
