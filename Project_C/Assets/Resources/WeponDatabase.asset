@@ -11,6 +11,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecce725678c3d0c4cac95c89385831a7, type: 3}
   m_Name: WeponDatabase
   m_EditorClassIdentifier: 
-  weponHeadData: []
+  weponHeadData:
+  - Name: "\u306D\u3053\u8033"
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
+  - Name: 
+    explaine: 
+    HP: 0
+    Charisma: 0
   weponTaliData: []
   weponLegData: []

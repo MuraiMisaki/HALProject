@@ -18,7 +18,7 @@ MonoBehaviour:
     - {fileID: 147844, guid: 8861d82041d44ce449ded844740d01f5, type: 2}
     - {fileID: 114902, guid: 8920e0451faf9234ebd6258c14b8aa0d, type: 2}
     bossObj: {fileID: 158294, guid: 5937c9b1c19033a47affcaa638819cf5, type: 2}
-    isClear: 0
+    isClear: 1
   - bossName: "\u30A6\u30B7"
     BGObj:
     - {fileID: 132808, guid: ae742a25c0cf03f46b4a43e804eb871d, type: 2}

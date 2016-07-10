@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47be005cc3a56ba49998adcf37624170, type: 3}
   m_Name: GameProgressionData
   m_EditorClassIdentifier: 
-  selectStage: 0
+  selectStage: 4
   weaponHead: 0
   weaponBody: 0
   weaponLeg: 0
+  frends: 

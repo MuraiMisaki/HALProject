@@ -26,7 +26,7 @@ MonoBehaviour:
     - MoveDistance: 30
       late:
       - 70
-      - 0
+      - 30
       - 0
     - MoveDistance: 40
       late:
