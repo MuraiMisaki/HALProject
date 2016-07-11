@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b14667fdd64b54f921518bf52bbe66, type: 3}
+  m_Name: EnemyPopDatabase
+  m_EditorClassIdentifier: 
+  popEnemyDatabase:
+  - name: "\u30CD\u30BA\u30DF"
+    popEnemyObj:
+    - {fileID: 130662, guid: 2c14683cf3f53a248bdb2f6e31515b18, type: 2}
+    - {fileID: 141544, guid: 8d26633775205e14180ab400edd1c4df, type: 2}
+    - {fileID: 132648, guid: be335a89ad955234cb34caae6c6222c9, type: 2}
+    popEnemyTable:
+    - MoveDistance: 10
+      late:
+      - 100
+      - 0
+      - 0
+    - MoveDistance: 30
+      late:
+      - 70
+      - 30
+      - 0
+    - MoveDistance: 40
+      late:
+      - 60
+      - 40
+      - 0
+    - MoveDistance: 50
+      late:
+      - 40
+      - 50
+      - 10
+    - MoveDistance: 60
+      late:
+      - 30
+      - 40
+      - 30
+    - MoveDistance: 70
+      late:
+      - 20
+      - 20
+      - 60
+    - MoveDistance: 80
+      late:
+      - 0
+      - 20
+      - 80
+    - MoveDistance: 90
+      late:
+      - 40
+      - 30
+      - 30
+  - name: "\u30A6\u30B7"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30C8\u30E9"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30A6\u30B6\u30AE"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30BF\u30C4"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30D8\u30D3"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30A6\u30DE"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30D2\u30C4\u30B8"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30B5\u30EB"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30C8\u30EA"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30A4\u30CC"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+  - name: "\u30A4\u30CE\u30B7\u30B7"
+    popEnemyObj:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    popEnemyTable:
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0
+    - MoveDistance: 0
+      late:
+      - 0
+      - 0
+      - 0

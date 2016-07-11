@@ -52,5 +52,9 @@ public class BlinkerCS : MonoBehaviour {
             StartCoroutine("Blinker");
         }
     }
+    public float GetBlinkTime()
+    {
+        return intervalTime* BlinkNum;
+    }
 
 }

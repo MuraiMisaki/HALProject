@@ -10,6 +10,10 @@ public class ShopSelectCS : MonoBehaviour {
     public Sprite InGauge;
     public Sprite InitGauge;
     SpriteRenderer MainSprite;
+
+    public Sprite InMark;
+    SpriteRenderer Marksprite;
+
     //定数定義
     const int PARTS_HEAD = 0;       //パーツ頭
     const int PARTS_SUIT = 1;       //パーツ服
@@ -26,13 +30,6 @@ public class ShopSelectCS : MonoBehaviour {
 
     //グローバル変数
     int SelectParts = 0;    //0…頭パーツを設定1…服パーツを設定2…足パーツを設定
-
-    //int HatPartsEdit = 0;   //頭装備を変更する変数
-
-    int HatEquip = 0;           //頭装備
-    int SuitEquip = 0;          //体装備
-    int BootsEquips = 0;        //足装備
-    //bool Initialize = false;
     int ShopPoint = 1234;
     int HatEquip = 0;           //頭装備
     int SuitEquip = 0;          //体装備
@@ -48,7 +45,7 @@ public class ShopSelectCS : MonoBehaviour {
     GameObject DFlame;
     GameObject[] Hat = new GameObject[3];
     GameObject[] Suit = new GameObject[3];
-    GameObject[] Boots = new GameObject[3];
+    GameObject[] Boots = new GameObject[4];
     GameObject Arrow1;
     GameObject Arrow2;
     GameObject Gauge;
@@ -56,6 +53,8 @@ public class ShopSelectCS : MonoBehaviour {
     GameObject ShopText;
     GameObject[] EquipIcon = new GameObject[3];
     GameObject PointText;
+    GameObject BuyMark;
+    GameObject[] BuyMarkClone = new GameObject[8];
     // Use this for initialization
     void Start() {
         UFlame = GameObject.Find("UpFlame");
@@ -65,8 +64,12 @@ public class ShopSelectCS : MonoBehaviour {
         Hat[1] = GameObject.Find("Hat2");
         Hat[2] = GameObject.Find("Hat3");
         Suit[0] = GameObject.Find("Suit1");
+        Suit[1] = GameObject.Find("Suit2");
+        Suit[2] = GameObject.Find("Suit3");
         Boots[0] = GameObject.Find("Boots1");
         Boots[1] = GameObject.Find("Boots2");
+        Boots[2] = GameObject.Find("Boots3");
+        Boots[3] = GameObject.Find("Boots3_2");
         Arrow1 = GameObject.Find("arrow1");
         Arrow2 = GameObject.Find("arrow2");
         EquipIcon[0] = GameObject.Find("HatEquipIcon");
@@ -75,6 +78,7 @@ public class ShopSelectCS : MonoBehaviour {
         Gauge = GameObject.Find("HPGauge1");
         ShopText = GameObject.Find("ShopText");
         PointText = GameObject.Find("point");
+        BuyMark = GameObject.Find("BuyMark");
         for (int i = 0; i < 19 ; i++)
         {
             float GaugeX = 0;
@@ -145,6 +149,17 @@ public class ShopSelectCS : MonoBehaviour {
             GaugeClone[i].transform.position = new Vector3(GaugeX,GaugeY);
             
         }
+        for(int i = 0; i < 8; i++)
+        {
+            BuyMarkClone[i] = Instantiate(BuyMark) as GameObject;
+            BuyMarkClone[i].transform.localScale = BuyMark.transform.localScale;
+        }
+        Marksprite = BuyMarkClone[2].GetComponent<SpriteRenderer>();
+        Marksprite.sprite = InMark;
+        BuyMarkClone[2].transform.position = Suit[0].transform.position + new Vector3(-0.85f, 0.85f);
+        Marksprite = BuyMarkClone[5].GetComponent<SpriteRenderer>();
+        Marksprite.sprite = InMark;
+        BuyMarkClone[5].transform.position = Boots[0].transform.position + new Vector3(-0.85f, 0.85f);
     }
 
     // Update is called once per frame
@@ -260,31 +275,58 @@ public class ShopSelectCS : MonoBehaviour {
                         Hat[0].transform.position = new Vector3(-3.5f ,4.1f);
                         Hat[1].transform.position = new Vector3(-0.4f,3);
                         Hat[2].transform.position = new Vector3(-6, 3);
+                        BuyMark.transform.position = Hat[0].transform.position + new Vector3(-0.85f,-0.35f);
+                        if (HatClass.Hat2_Buy == true)
+                        {
+                            BuyMarkClone[0].transform.position = Hat[1].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (HatClass.Hat3_Buy == true)
+                        {
+                            BuyMarkClone[1].transform.position = Hat[2].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
                         GaugeInitialize();
                         HatGaugeUpdate(HatEquip);
                         ShopText.GetComponent<Text>().text = "Hat1の説明文";
-                        HatEquipMount(HatEquip);
-                        HatEquipIconMove();
+                        HatEquipMount(HatEquip,HatClass.Hat1_Buy,HatClass.Hat1_NeedPoint);
+                        EquipIconMove();
                         break;
                     case 1:
                         Hat[0].transform.position = new Vector3(-6, 3);
                         Hat[1].transform.position = new Vector3(-3.5f, 4.1f);
                         Hat[2].transform.position = new Vector3(-0.4f, 3);
+                        BuyMark.transform.position = Hat[0].transform.position + new Vector3(-0.85f, 0.85f);
+                        if (HatClass.Hat2_Buy == true)
+                        {
+                            BuyMarkClone[0].transform.position = Hat[1].transform.position + new Vector3(-0.85f, -0.35f);
+                        }
+                        if (HatClass.Hat3_Buy == true)
+                        {
+                            BuyMarkClone[1].transform.position = Hat[2].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
                         GaugeInitialize();
                         HatGaugeUpdate(HatEquip);
                         ShopText.GetComponent<Text>().text = "Hat2\nの説明文";
-                        HatEquipMount(HatEquip);
-                        HatEquipIconMove();
+                        HatEquipMount(HatEquip, HatClass.Hat2_Buy, HatClass.Hat2_NeedPoint);
+                        EquipIconMove();
                         break;
                     case 2:
                         Hat[0].transform.position = new Vector3(-0.4f, 3);
                         Hat[1].transform.position = new Vector3(-6, 3);
                         Hat[2].transform.position = new Vector3(-3.5f, 4.1f);
+                        BuyMark.transform.position = Hat[0].transform.position + new Vector3(-0.85f, 0.85f);
+                        if (HatClass.Hat2_Buy == true)
+                        {
+                            BuyMarkClone[0].transform.position = Hat[1].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (HatClass.Hat3_Buy == true)
+                        {
+                            BuyMarkClone[1].transform.position = Hat[2].transform.position + new Vector3(-0.85f, -0.35f);
+                        }
                         GaugeInitialize();
                         HatGaugeUpdate(HatEquip);
                         ShopText.GetComponent<Text>().text = "Hat3の説明文";
-                        HatEquipMount(HatEquip);
-                        HatEquipIconMove();
+                        HatEquipMount(HatEquip,HatClass.Hat3_Buy, HatClass.Hat3_NeedPoint);
+                        EquipIconMove();
                         break;
                 }
                 break;
@@ -300,24 +342,69 @@ public class ShopSelectCS : MonoBehaviour {
                 {
                     case 0:
                         Suit[0].transform.position = new Vector3(-3.5f ,-0.1f);
+                        Suit[1].transform.position = new Vector3(-0.4f ,-0.1f);
+                        Suit[2].transform.position = new Vector3(-6,-0.1f);
+                        if (SuitClass.Suit1_Buy == true)
+                        {
+                            BuyMarkClone[2].transform.position = Suit[0].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (SuitClass.Suit2_Buy == true)
+                        {
+                            BuyMarkClone[3].transform.position = Suit[1].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (SuitClass.Suit3_Buy == true)
+                        {
+                            BuyMarkClone[4].transform.position = Suit[2].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
                         GaugeInitialize();
                         SuitGaugeUpdate(SuitEquip);
                         ShopText.GetComponent<Text>().text = "Suit1の説明文";
-                        SuitEquipMount(SuitEquip);
+                        SuitEquipMount(SuitEquip,SuitClass.Suit1_Buy,SuitClass.Suit1_NeedPoint);
+                        EquipIconMove();
                         break;
                     case 1:
                         Suit[0].transform.position = new Vector3(-6, -0.1f);
+                        Suit[1].transform.position = new Vector3(-3.5f, -0.1f);
+                        Suit[2].transform.position = new Vector3(-0.4f, -0.1f);
+                        if (SuitClass.Suit1_Buy == true)
+                        {
+                            BuyMarkClone[2].transform.position = Suit[0].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (SuitClass.Suit2_Buy == true)
+                        {
+                            BuyMarkClone[3].transform.position = Suit[1].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (SuitClass.Suit3_Buy == true)
+                        {
+                            BuyMarkClone[4].transform.position = Suit[2].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
                         GaugeInitialize();
                         SuitGaugeUpdate(SuitEquip);
                         ShopText.GetComponent<Text>().text = "Suit2の説明文";
-                        SuitEquipMount(SuitEquip);
+                        SuitEquipMount(SuitEquip, SuitClass.Suit2_Buy, SuitClass.Suit2_NeedPoint);
+                        EquipIconMove();
                         break;
                     case 2:
                         Suit[0].transform.position = new Vector3(-0.4f, -0.1f);
+                        Suit[1].transform.position = new Vector3(-6f, -0.1f);
+                        Suit[2].transform.position = new Vector3(-3.5f, -0.1f);
+                        if (SuitClass.Suit1_Buy == true)
+                        {
+                            BuyMarkClone[2].transform.position = Suit[0].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (SuitClass.Suit2_Buy == true)
+                        {
+                            BuyMarkClone[3].transform.position = Suit[1].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (SuitClass.Suit3_Buy == true)
+                        {
+                            BuyMarkClone[4].transform.position = Suit[2].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
                         GaugeInitialize();
                         SuitGaugeUpdate(SuitEquip);
                         ShopText.GetComponent<Text>().text = "Suit3の説明文";
-                        SuitEquipMount(SuitEquip);
+                        SuitEquipMount(SuitEquip, SuitClass.Suit3_Buy, SuitClass.Suit3_NeedPoint);
+                        EquipIconMove();
                         break;
 
                 }
@@ -334,26 +421,71 @@ public class ShopSelectCS : MonoBehaviour {
                     case 0:
                         Boots[0].transform.position = new Vector3(-3.7f, -3.5f);
                         Boots[1].transform.position = new Vector3(-0.5f, -3.5f);
+                        Boots[2].transform.position = new Vector3(-5.46f, -3.91f);
+                        Boots[3].transform.position = new Vector3(-6.7f, -3.91f);
+                        if (BootsClass.Boots1_Buy == true)
+                        {
+                            BuyMarkClone[5].transform.position = Boots[0].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (BootsClass.Boots2_Buy == true)
+                        {
+                            BuyMarkClone[6].transform.position = Boots[1].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (BootsClass.Boots3_Buy == true)
+                        {
+                            BuyMarkClone[7].transform.position = Boots[2].transform.position + new Vector3(-1.25f, 1.35f);
+                        }
                         GaugeInitialize();
                         BootsGaugeUpdate(BootsEquips);
                         ShopText.GetComponent<Text>().text = "Boots1の説明文";
-                        BootsEquipMount(BootsEquips);
+                        BootsEquipMount(BootsEquips,BootsClass.Boots1_Buy,BootsClass.Boots1_NeedPoint);
+                        EquipIconMove();
                         break;
                     case 1:
                         Boots[0].transform.position = new Vector3(-6.1f, -3.5f);
                         Boots[1].transform.position = new Vector3(-3.7f, -3.5f);
+                        Boots[2].transform.position = new Vector3(0.3f, -3.91f);
+                        Boots[3].transform.position = new Vector3(-1.14f, -3.91f);
+                        if (BootsClass.Boots1_Buy == true)
+                        {
+                            BuyMarkClone[5].transform.position = Boots[0].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (BootsClass.Boots2_Buy == true)
+                        {
+                            BuyMarkClone[6].transform.position = Boots[1].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (BootsClass.Boots3_Buy == true)
+                        {
+                            BuyMarkClone[7].transform.position = Boots[2].transform.position + new Vector3(-1.25f, 1.35f);
+                        }
                         GaugeInitialize();
                         BootsGaugeUpdate(BootsEquips);
                         ShopText.GetComponent<Text>().text = "Boots2の説明文";
-                        BootsEquipMount(BootsEquips);
+                        BootsEquipMount(BootsEquips, BootsClass.Boots2_Buy, BootsClass.Boots2_NeedPoint);
+                        EquipIconMove();
                         break;
                     case 2:
                         Boots[0].transform.position = new Vector3(-0.5f, -3.5f);
                         Boots[1].transform.position = new Vector3(-6.1f, -3.5f);
+                        Boots[2].transform.position = new Vector3(-2.72f, -3.91f);
+                        Boots[3].transform.position = new Vector3(-4.32f, -3.91f);
+                        if (BootsClass.Boots1_Buy == true)
+                        {
+                            BuyMarkClone[5].transform.position = Boots[0].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (BootsClass.Boots2_Buy == true)
+                        {
+                            BuyMarkClone[6].transform.position = Boots[1].transform.position + new Vector3(-0.85f, 0.85f);
+                        }
+                        if (BootsClass.Boots3_Buy == true)
+                        {
+                            BuyMarkClone[7].transform.position = Boots[2].transform.position + new Vector3(-1.25f, 1.35f);
+                        }
                         GaugeInitialize();
                         BootsGaugeUpdate(BootsEquips);
                         ShopText.GetComponent<Text>().text = "Boots3の説明文";
-                        BootsEquipMount(BootsEquips);
+                        BootsEquipMount(BootsEquips, BootsClass.Boots3_Buy, BootsClass.Boots3_NeedPoint);
+                        EquipIconMove();
                         break;
 
                 }
@@ -362,6 +494,7 @@ public class ShopSelectCS : MonoBehaviour {
 
 
     }
+
 
     void GaugeInitialize()
     {
@@ -530,27 +663,97 @@ public class ShopSelectCS : MonoBehaviour {
 
     }
 
-    void HatEquipMount(int MountInt){
-        if (Input.GetKeyDown(KeyCode.E)) {
-            HatMount = MountInt;
+    void HatEquipMount(int MountInt,bool HatBuy,int NeedPT){
+        if (Input.GetButtonDown("Submit")) { 
+            if (HatBuy == false )
+            {
+                if (ShopPoint >= NeedPT)
+                {
+                    ShopPoint -= NeedPT;
+                    switch (MountInt)
+                    {
+                        case 0:
+                            HatClass.Hat1_Buy = true;
+                            break;
+                        case 1:
+                            HatClass.Hat2_Buy = true;
+                             Marksprite = BuyMarkClone[0].GetComponent<SpriteRenderer>();
+                            Marksprite.sprite = InMark;
+                            break;
+                        case 2:
+                            HatClass.Hat3_Buy = true;
+                            Marksprite = BuyMarkClone[1].GetComponent<SpriteRenderer>();
+                            Marksprite.sprite = InMark;
+                            break;
+                    }
+                    HatBuy = true;
+                }
+            }
+            if (HatBuy == true) {
+                HatMount = MountInt;
+            }
         }
     }
-    void SuitEquipMount(int MountInt)
+    void SuitEquipMount(int MountInt,bool SuitBuy,int NeedPT)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Submit"))
         {
-            SuitMount = MountInt;
+            if (SuitBuy == false)
+            {
+                if (ShopPoint >= NeedPT)
+                {
+                    ShopPoint -= NeedPT;
+                    switch (MountInt)
+                    {
+                        case 0:
+                            SuitClass.Suit1_Buy = true;
+                            break;
+                        case 1:
+                            SuitClass.Suit2_Buy = true;
+                            break;
+                        case 2:
+                            SuitClass.Suit3_Buy = true;
+                            break;
+                    }
+                    SuitBuy = true;
+                }
+            }
+            if (SuitBuy == true) {
+                SuitMount = MountInt;
+            }
         }
     }
-    void BootsEquipMount(int MountInt)
+    void BootsEquipMount(int MountInt,bool BootsBuy,int NeedPT)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Submit"))
         {
-            BootsMount = MountInt;
+            if (BootsBuy == false)
+            {
+                if (ShopPoint >= NeedPT)
+                {
+                    ShopPoint -= NeedPT;
+                    switch (MountInt)
+                    {
+                        case 0:
+                            BootsClass.Boots1_Buy = true;
+                            break;
+                        case 1:
+                            BootsClass.Boots2_Buy = true;
+                            break;
+                        case 2:
+                            BootsClass.Boots3_Buy = true;
+                            break;
+                    }
+                    BootsBuy = true;
+                }
+            }
+            if (BootsBuy == true) {
+                BootsMount = MountInt;
+            }
         }
     }
 
-    void HatEquipIconMove(){
+    void EquipIconMove(){
 
         switch (HatMount) {
             case 0:
@@ -596,6 +799,97 @@ public class ShopSelectCS : MonoBehaviour {
                 break;
         }
 
+        switch (SuitMount)
+        {
+            case 0:
+                switch (SuitEquip)
+                {
+                    case 0:
+                        EquipIcon[1].transform.position = new Vector3(-3.5f, -0.1f);
+                        break;
+                    case 1:
+                        EquipIcon[1].transform.position = new Vector3(-6.0f, -0.1f);
+                        break;
+                    case 2:
+                        EquipIcon[1].transform.position = new Vector3(-0.3f, -0.1f);
+                        break;
+                }
+                break;
+            case 1:
+                switch (SuitEquip)
+                {
+                    case 0:
+                        EquipIcon[1].transform.position = new Vector3(-0.3f, -0.1f);
+                        break;
+                    case 1:
+                        EquipIcon[1].transform.position = new Vector3(-3.5f, -0.1f);
+                        break;
+                    case 2:
+                        EquipIcon[1].transform.position = new Vector3(-6.0f, -0.1f);
+                        break;
+                }
+                break;
+            case 2:
+                switch (SuitEquip)
+                {
+                    case 0:
+                        EquipIcon[1].transform.position = new Vector3(-6.0f, -0.1f);
+                        break;
+                    case 1:
+                        EquipIcon[1].transform.position = new Vector3(-0.3f, -0.1f);
+                        break;
+                    case 2:
+                        EquipIcon[1].transform.position = new Vector3(-3.5f, -0.1f);
+                        break;
+                }
+                break;
+        }
+
+        switch (BootsMount)
+        {
+            case 0:
+                switch (BootsEquips)
+                {
+                    case 0:
+                        EquipIcon[2].transform.position = new Vector3(-3.5f, -3.4f);
+                        break;
+                    case 1:
+                        EquipIcon[2].transform.position = new Vector3(-6.0f, -3.4f);
+                        break;
+                    case 2:
+                        EquipIcon[2].transform.position = new Vector3(-0.3f, -3.4f);
+                        break;
+                }
+                break;
+            case 1:
+                switch (BootsEquips)
+                {
+                    case 0:
+                        EquipIcon[2].transform.position = new Vector3(-0.3f, -3.4f);
+                        break;
+                    case 1:
+                        EquipIcon[2].transform.position = new Vector3(-3.5f, -3.4f);
+                        break;
+                    case 2:
+                        EquipIcon[2].transform.position = new Vector3(-6.0f, -3.4f);
+                        break;
+                }
+                break;
+            case 2:
+                switch (BootsEquips)
+                {
+                    case 0:
+                        EquipIcon[2].transform.position = new Vector3(-6.0f, -3.4f);
+                        break;
+                    case 1:
+                        EquipIcon[2].transform.position = new Vector3(-0.3f, -3.4f);
+                        break;
+                    case 2:
+                        EquipIcon[2].transform.position = new Vector3(-3.5f, -3.4f);
+                        break;
+                }
+                break;
+        }
     }
 
 }
