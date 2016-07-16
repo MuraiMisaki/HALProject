@@ -8,9 +8,20 @@ public class SceneManagerCS : MonoBehaviour {
     public string prevScene;
     public int selectScene;
 
+    // フェード用
+    protected float fadeTime = 1.0f;
+    public Fade fade = null;
+
     // Use this for initialization
     void Start () {
+        fade = GameObject.Find("FadeImage").GetComponent<Fade>();
         selectScene = 0;
+        fade.FadeOut(fadeTime);
+
+        // 削除するオブジェクトの登録
+        GameObject obj;
+        obj = GameObject.Find("StatusUI");
+        GetComponent<DeleteObjCS>().AddDestroyObj(obj);
     }
 	
 	// Update is called once per frame
@@ -43,8 +54,10 @@ public class SceneManagerCS : MonoBehaviour {
         // 文字列が入っていなければ
         if (nextScene[i].Length == 0)
             return;
-
-        SceneManager.LoadScene(nextScene[i]);
+        fade.FadeIn(fadeTime, () =>
+        {
+            SceneManager.LoadScene(nextScene[i]);
+        });
     }
     public void MovePrevScene()
     {
@@ -52,6 +65,9 @@ public class SceneManagerCS : MonoBehaviour {
         if (prevScene.Length == 0)
             return;
 
-        SceneManager.LoadScene(prevScene);
+        fade.FadeIn(fadeTime, () =>
+        {
+            SceneManager.LoadScene(prevScene);
+        });
     }
 }

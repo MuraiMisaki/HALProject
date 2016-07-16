@@ -3,10 +3,17 @@ using System.Collections;
 
 public class PartyChangeSceneManagerCS : SceneManagerCS
 {
-	// Use this for initialization
-	void Start () {
-	
-	}
+
+    private GameObject bgmManager;
+    // Use this for initialization
+    void Start ()
+    {
+        fade = GameObject.Find("FadeImage").GetComponent<Fade>();
+        fade.FadeOut(fadeTime);
+        bgmManager = GameObject.Find("BgmManager");
+        bgmManager.GetComponent<BgmManager>().Play("BGM_PartySelect");
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

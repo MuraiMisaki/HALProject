@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100bfd7a68aaece4e905eeb209553dde, type: 3}
+  m_Name: StageData
+  m_EditorClassIdentifier: 
+  stageData:
+  - bossName: "\u30CD\u30BA\u30DF"
+    BGObj:
+    - {fileID: 159610, guid: b73981509f681a3428d0fa8bd19bfc3d, type: 2}
+    - {fileID: 147844, guid: 8861d82041d44ce449ded844740d01f5, type: 2}
+    - {fileID: 114902, guid: 8920e0451faf9234ebd6258c14b8aa0d, type: 2}
+    bossObj: {fileID: 158294, guid: 5937c9b1c19033a47affcaa638819cf5, type: 2}
+    bgm: BGM_Stage01_Mouse
+    isClear: 0
+  - bossName: "\u30A6\u30B7"
+    BGObj:
+    - {fileID: 132808, guid: ae742a25c0cf03f46b4a43e804eb871d, type: 2}
+    - {fileID: 182708, guid: c1a463444a108ef46953b1c2cd13ec55, type: 2}
+    - {fileID: 172746, guid: c078855abe8f6994d94a15d81c92f089, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage02_Cattle
+    isClear: 0
+  - bossName: "\u30C8\u30E9"
+    BGObj:
+    - {fileID: 127946, guid: a5b21feffb665354fa377a30dba5bc16, type: 2}
+    - {fileID: 123780, guid: e74f18791da228b4cab5ecc78451382a, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage03_Tigar
+    isClear: 0
+  - bossName: "\u30A6\u30B5\u30AE"
+    BGObj:
+    - {fileID: 139714, guid: e83c98e8d64b6dc49bfeb74e445765ae, type: 2}
+    - {fileID: 144894, guid: df080c00bbe3e3940a2c93ba0623dabc, type: 2}
+    - {fileID: 120474, guid: cfe7d9f3d2fe31842a1ca8d92184062a, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage04_Rabbit
+    isClear: 0
+  - bossName: "\u30BF\u30C4"
+    BGObj:
+    - {fileID: 176942, guid: bf17e344ee88fa34893452c57ef0e811, type: 2}
+    - {fileID: 149994, guid: 781ceac4ea6d04d4bbfd1f6391b468e1, type: 2}
+    - {fileID: 123940, guid: 6c9970f0b90f6334383eb67e29e14e36, type: 2}
+    - {fileID: 185228, guid: f36c89f061c2b9049974712dcf69b11a, type: 2}
+    - {fileID: 171246, guid: fcb4e0b75c8cdb244aee77b272150869, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage05_Dragon
+    isClear: 1
+  - bossName: "\u30D8\u30D3"
+    BGObj:
+    - {fileID: 195682, guid: 4e60a505c58b68b42a04792bb3da3792, type: 2}
+    - {fileID: 153486, guid: bbf20b3f9fb97b44c835897a206a735b, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage06_Snake
+    isClear: 0
+  - bossName: "\u30A6\u30DE"
+    BGObj:
+    - {fileID: 141812, guid: de6259f6b1ba7f446ae96ffa75ae97d7, type: 2}
+    - {fileID: 190052, guid: 5061949705583404793e788d25a34b0d, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage07_Horse
+    isClear: 0
+  - bossName: "\u30D2\u30C4\u30B8"
+    BGObj:
+    - {fileID: 136610, guid: ebdb8e623a3cc7643b6dc6be1bd8766f, type: 2}
+    - {fileID: 127200, guid: eeb5048cf6789104eb75f13654182114, type: 2}
+    - {fileID: 171792, guid: 93b0de8092e06d04aa7f8f78d36c1ded, type: 2}
+    - {fileID: 182882, guid: 6343bd9cca092064cab1a1724b33c0e5, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage08_Sheep
+    isClear: 0
+  - bossName: "\u30B5\u30EB"
+    BGObj:
+    - {fileID: 146418, guid: 9068f4d1fd9e75941ae404cd6ae7bba5, type: 2}
+    - {fileID: 114918, guid: b6cc2851b5e55c44d9d72dc295b87b7e, type: 2}
+    - {fileID: 188652, guid: a33ee70d658be0040b50e1237526645f, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage09_Monky
+    isClear: 0
+  - bossName: "\u30C8\u30EA"
+    BGObj:
+    - {fileID: 195402, guid: 6e46c3468210f5c45ab0597a790e498b, type: 2}
+    - {fileID: 158964, guid: 0a1f95efabbb2094ba0423fdf665f993, type: 2}
+    - {fileID: 101050, guid: 32b00be3eb657c64fbe89eac048cd2c6, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage10_Bird
+    isClear: 0
+  - bossName: "\u30A4\u30CC"
+    BGObj:
+    - {fileID: 196548, guid: 1f20b09829bdf604e8cc2f52fe4c1f30, type: 2}
+    - {fileID: 165532, guid: a132c5f663a63d540bed11e8dc71a799, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage11_Dog
+    isClear: 0
+  - bossName: "\u30A4\u30CE\u30B7\u30B7"
+    BGObj:
+    - {fileID: 115788, guid: d683876d0ed0aa1408896d181427d5ed, type: 2}
+    - {fileID: 166844, guid: 921ed778594068d49ac112686c100938, type: 2}
+    bossObj: {fileID: 0}
+    bgm: BGM_Stage12_Boar
+    isClear: 0
+  enemyPopDatabase: {fileID: 11400000, guid: 146bc6a411d171846897432aed4ed852, type: 2}

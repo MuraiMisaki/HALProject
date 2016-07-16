@@ -7,11 +7,16 @@ public class MoveCursor : MonoBehaviour {
     GameObject Manager;
     GameObject ChangeText;
     public GameObject partyChangeManager;
-    
-	// Use this for initialization
+
+    private int count;
+    private int cnt;
+
+    // Use this for initialization
 	void Start () {
         Manager = GameObject.Find("Manager");
         ChangeText = GameObject.Find("Text");
+        count = 0;
+        cnt = 0;
 	}
 	
 	// Update is called once per frame
@@ -29,6 +34,12 @@ public class MoveCursor : MonoBehaviour {
             // 右
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
+                cnt++;
+                if (cnt > 4)
+                {
+                    cnt = 4;
+                }
+
                 if (this.transform.localPosition.x < 200)
                 {
                     this.transform.localPosition += new Vector3(140, 0, 0);
@@ -41,6 +52,13 @@ public class MoveCursor : MonoBehaviour {
 
             // 左
             if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+                
+                cnt--;
+                if (cnt < 0)
+                {
+                    cnt = 0;
+                }
+                
                 if (this.transform.localPosition.x < 220)
                 {
                     if (this.transform.localPosition.x > -210)
@@ -55,12 +73,13 @@ public class MoveCursor : MonoBehaviour {
             // 選択する
             if (Input.GetButtonDown("Submit"))
             {
+                TexManager Ma = Manager.GetComponent<TexManager>();
                 if (this.transform.localPosition.x > 250) {
+                    Ma.SetList();
                     partyChangeManager.GetComponent<PartyChangeSceneManagerCS>().MoveNextScene();
                 }
-                TexManager Ma = Manager.GetComponent<TexManager>();
                 if (this.transform.localPosition.x < 250)
-                    Ma.Setdef(CharacterData);
+                    Ma.Setdef(CharacterData,cnt);
             }
  
         
@@ -72,11 +91,29 @@ public class MoveCursor : MonoBehaviour {
 
                 this.transform.localPosition = new Vector3(-210, 120, 0);
             }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                count++;
+                if (count > 12)
+                {
+                    count = 0;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                count--;
+                if (count < 0)
+                {
+                    count = 12;
+                }
+            }
+
             // 選択
             if (Input.GetButtonDown("Submit"))
             {
                     TexManager Ma = Manager.GetComponent<TexManager>();
-                    Ma.GetTex(CharacterData);
+                    Ma.GetTex(CharacterData,count);
                     
             }
         }

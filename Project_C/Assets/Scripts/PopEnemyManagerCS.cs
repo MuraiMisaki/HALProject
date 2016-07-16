@@ -49,6 +49,8 @@ public class PopEnemyManagerCS : MonoBehaviour {
             }
             if (posX > 0.0f)
             {
+
+                GetComponent<GameMainSceneManagerCS>().PlayBossBGM();
                 // 出現メッセージ
                 Instantiate(BossMasage);
 

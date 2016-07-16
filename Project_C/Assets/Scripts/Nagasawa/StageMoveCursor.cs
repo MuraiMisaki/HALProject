@@ -10,12 +10,13 @@ public class StageMoveCursor : MonoBehaviour{
 
     private GameObject StageData;
 
-
+    private GameProgressionData StageNoData;
 
 	// Use this for initialization
 	void Start () {
         Stage = GameObject.Find("Stage");
         StageData = GameObject.Find("StageData/StageText");
+        StageNoData = Resources.Load("Database/GameProgression") as GameProgressionData;
         foreach (Transform child in Stage.transform)
         {
             myList.Add(child.localPosition);
@@ -46,6 +47,11 @@ public class StageMoveCursor : MonoBehaviour{
                 count = 11;
                 this.transform.localPosition = myList[count];
             }
+        }
+
+        if (Input.GetButtonDown("Submit")) {
+            PlayerPrefs.SetInt("SelectStage", count);
+            //            StageNoData.selectStage = count;
         }
 
 	}

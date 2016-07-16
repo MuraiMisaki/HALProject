@@ -101,7 +101,7 @@ MonoBehaviour:
   - {fileID: 112502}
   - {fileID: 182282}
   interval: 38
-  speed: 0
+  speed: 0.4
 --- !u!212 &21232758
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5764d057efc2fe74e81615dae5484e42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2cb10ac23937b35468cad34ad37e5489, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5764d057efc2fe74e81615dae5484e42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2cb10ac23937b35468cad34ad37e5489, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
