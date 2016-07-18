@@ -22,6 +22,7 @@ public class PopEnemyManagerCS : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        stageNum = PlayerPrefs.GetInt("SelectStage");
         popIntervalTime = 0;
         popPos = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         popPos.x += 2.0f;
@@ -49,6 +50,8 @@ public class PopEnemyManagerCS : MonoBehaviour {
             }
             if (posX > 0.0f)
             {
+
+                GetComponent<GameMainSceneManagerCS>().PlayBossBGM();
                 // 出現メッセージ
                 Instantiate(BossMasage);
 
@@ -85,7 +88,8 @@ public class PopEnemyManagerCS : MonoBehaviour {
             foreach (Transform child in transform)
             {
                 // 雑魚敵に撤退命令
-                child.gameObject.GetComponent<EnemyFatRatCS>().StartReturn();
+                child.gameObject.GetComponent<EnemyMoveCS>().ChangeMoveType(MoveType.RETURN);
+                //child.gameObject.GetComponent<EnemyFatRatCS>().StartReturn();
             }
             return;
         }

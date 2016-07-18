@@ -4,12 +4,15 @@ using System.Collections;
 public class GetStageDatabaseCS : MonoBehaviour {
 
 //    public int stageNumber = 0;             // 後でシーン内で統一する。
-    public GameProgressionData gameData;    // ゲーム進行用データ
+//    public GameProgressionData gameData;    // ゲーム進行用データ
     public StageDatabase stageDatabase;
     public GameObject backgroundParent;
-	// Use this for initialization
-	void Start () {
-        int stageNumber = gameData.selectStage;
+    private int stageNumber;
+    // Use this for initialization
+    void Awake () {
+        // 現在のステージ番号を取得
+        //       gameData = Resources.Load("Database/GameProgression") as GameProgressionData;
+        stageNumber = PlayerPrefs.GetInt("SelectStage");//gameData.selectStage;
         if (stageNumber >= stageDatabase.stageData.Length)
             return;
 
@@ -28,4 +31,7 @@ public class GetStageDatabaseCS : MonoBehaviour {
 	void Update () {
 	
 	}
+    public StageData GetStageData() {
+        return stageDatabase.stageData[stageNumber];
+    }
 }

@@ -9,10 +9,11 @@ public class PlayerStatusCS : MonoBehaviour {
     public int hp;                                      // HPデータ
     private int maxHP;
     private float invincibleTime;                       // 無敵時間
-
-    // Use this for initialization
+    public GameObject damageEffect;                    // ダメージを受けた時のエフェクト
+    public GameObject recoveryEffect;
     void Start () {
         lifeStage = hpUI[0].GetComponent<UIStatusCS>().GetStatus();
+
         maxHP = hp = lifeStage * hpUI.Length;
     }
 	
@@ -28,13 +29,14 @@ public class PlayerStatusCS : MonoBehaviour {
 	}
     public void Recovery() {
         hp++;
+
+        Instantiate(recoveryEffect, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.rotation);
         if (maxHP < hp)
         {
             hp = maxHP;
         }
         else
         {
-            Debug.Log("hp:" + (hp+1) + " Stage:" + lifeStage + " UInum:" + (((hp + 1) / lifeStage) - 1));
             hpUI[((hp+1) / lifeStage) - 1].GetComponent<UIStatusCS>().RecoveryUI();
         }
 
@@ -57,6 +59,9 @@ public class PlayerStatusCS : MonoBehaviour {
         {
             // HPを減らす
             hp--;
+            // ダメージエフェクト
+            Instantiate(damageEffect, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), transform.rotation);
+
             // 下限制限
             if (hp < 0) {
                 hp = 0;
