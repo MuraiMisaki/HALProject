@@ -102,24 +102,17 @@ MonoBehaviour:
       - 0
   - name: "\u30A6\u30B6\u30AE"
     popEnemyObj:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 130662, guid: 06c704e353c7bf84ab8454dc0951e0a3, type: 2}
+    - {fileID: 130662, guid: c2687c5e1bda71844ba1e979b8e5d05e, type: 2}
     popEnemyTable:
-    - MoveDistance: 0
+    - MoveDistance: 10
       late:
+      - 100
       - 0
-      - 0
-      - 0
-    - MoveDistance: 0
+    - MoveDistance: 20
       late:
-      - 0
-      - 0
-      - 0
-    - MoveDistance: 0
-      late:
-      - 0
-      - 0
+      - 50
+      - 50
       - 0
   - name: "\u30BF\u30C4"
     popEnemyObj:

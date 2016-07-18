@@ -11,10 +11,12 @@ public class StageMoveCursor : MonoBehaviour{
     private GameObject StageData;
 
     private GameProgressionData StageNoData;
+    private GameObject BackGroud;
 
 	// Use this for initialization
 	void Start () {
         Stage = GameObject.Find("Stage");
+        BackGroud = GameObject.Find("Back");
         StageData = GameObject.Find("StageData/StageText");
         StageNoData = Resources.Load("Database/GameProgression") as GameProgressionData;
         foreach (Transform child in Stage.transform)
@@ -36,6 +38,7 @@ public class StageMoveCursor : MonoBehaviour{
                 count = 0;
                 this.transform.localPosition = myList[count];
             }
+            BackGroud.GetComponent<StageSelectBackCS>().ChangeBG(count);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
 
@@ -47,6 +50,8 @@ public class StageMoveCursor : MonoBehaviour{
                 count = 11;
                 this.transform.localPosition = myList[count];
             }
+
+            BackGroud.GetComponent<StageSelectBackCS>().ChangeBG(count);
         }
 
         if (Input.GetButtonDown("Submit")) {

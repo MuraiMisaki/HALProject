@@ -365,9 +365,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 379577009}
-  - 114: {fileID: 379577008}
   - 114: {fileID: 379577010}
   - 114: {fileID: 379577011}
+  - 114: {fileID: 379577008}
   m_Layer: 0
   m_Name: ResultManager
   m_TagString: Untagged
@@ -383,12 +383,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 379577007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c5d61cead933c5479a17d573cc27089, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d0c64c63eeefcb498efb10553f34741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene:
   - StageSelectScene
-  prevScene: GameMainScene
+  prevScene: 
   selectScene: 0
   fade: {fileID: 0}
 --- !u!4 &379577009
